@@ -1,29 +1,97 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Backend Franchise API
 
-* The original package name 'com.jkoinosdkentron.backend-franchise-api' is invalid and this project uses 'com.jkoinosdkentron.backend_franchise_api' instead.
+Este proyecto es una API reactiva desarrollada con **Spring Boot**, diseñada para gestionar franquicias, sucursales y productos. Implementa Clean Architecture y sigue buenas prácticas modernas de desarrollo backend.
 
-# Getting Started
+---
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## 🧱 Tecnologías utilizadas
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.0/gradle-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.0/gradle-plugin/packaging-oci-image.html)
-* [Spring Reactive Web](https://docs.spring.io/spring-boot/3.5.0/reference/web/reactive.html)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.5.0/reference/using/devtools.html)
-* [Spring Configuration Processor](https://docs.spring.io/spring-boot/3.5.0/specification/configuration-metadata/annotation-processor.html)
-* [Spring Data Reactive MongoDB](https://docs.spring.io/spring-boot/3.5.0/reference/data/nosql.html#data.nosql.mongodb)
+- Java 17
+- Spring Boot (WebFlux)
+- Gradle con Kotlin DSL
+- MongoDB (Reactive)
+- Docker & Docker Compose
+- Clean Architecture
+- JUnit 5 + Mockito
+- GitHub (flujo de trabajo profesional)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+---
 
-* [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
-* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
+## 🚀 Endpoints principales
 
-### Additional Links
-These additional references should also help you:
+- ✅ Crear franquicia
+- ✅ Agregar sucursal a una franquicia
+- ✅ Agregar producto a una sucursal
+- ✅ Eliminar producto de una sucursal
+- ✅ Modificar stock de producto
+- ✅ Consultar el producto con más stock por sucursal de una franquicia
+- 🔁 (Plus) Actualizar nombre de la franquicia
+- 🔁 (Plus) Actualizar nombre de la sucursal
+- 🔁 (Plus) Actualizar nombre de un producto
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+---
 
+## 🧪 Ejecutar localmente
+
+### ✅ Pre-requisitos
+
+- JDK 17
+- Docker
+- MongoDB o Docker Compose
+- IntelliJ IDEA (u otro IDE con soporte Gradle Kotlin DSL)
+
+---
+
+### 🐳 Usar Docker
+
+Ejecuta el servicio de base de datos con:
+
+docker-compose up -d
+
+> Esto levantará una instancia de MongoDB local para la persistencia reactiva.
+
+---
+
+### 🔧 Compilar y ejecutar
+
+./gradlew bootRun
+
+Para compilar el proyecto:
+
+./gradlew build
+
+---
+
+### ✅ Ejecutar pruebas
+
+./gradlew test
+
+---
+
+## 📁 Estructura del Proyecto
+
+src/
+├── main/java/com/jdvargas/backendfranchiseapi/
+│   ├── controller/        # Capa de exposición (REST API)
+│   ├── application/       # Casos de uso (lógica de negocio orquestada)
+│   ├── domain/            # Entidades de dominio y contratos
+│   └── infrastructure/    # Adaptadores externos, base de datos, configuración
+└── resources/
+└── application.yml    # Configuración de Spring
+
+---
+
+## 📌 Notas importantes
+
+- El proyecto utiliza programación reactiva con WebFlux.
+- La estructura sigue Clean Architecture para un diseño desacoplado y mantenible.
+- El control de versiones se gestiona con Git y el repositorio es público.
+- Se documenta cómo levantar la app en local usando Docker.
+- Se busca cumplir todos los puntos extras solicitados en la prueba.
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por **Juan Daniel Vargas Atencio**  
+GitHub: https://github.com/JkoinosDkentron
